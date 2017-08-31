@@ -1,9 +1,9 @@
 <?php
 
-$host = "mysql13.000webhost.com";
-$user = "a7394901_admin";
-$password = "090909";
-$db = "a7394901_medbox";
+$host = "projetwebsrv.mysql.database.azure.com";
+$user = "mysqluser@projetwebsrv";
+$password = "Fatma123";
+$db = "document";
 
 
 $con = mysqli_connect($host,$user,$password,$db);
