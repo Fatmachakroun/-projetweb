@@ -1,18 +1,7 @@
 <?php
-
-	class config
-	{
-		public $cnx;
-		function __construct ()
-		{
-				$servername="projetwebsrv.mysql.database.azure.com";
-	$dbname="mysql";
-	$username="mysqluser@projetwebsrv";
-	$password="Fatma123";
-	$conn=new PDO("mysql:host=$servername;dbname=$dbname",$username,$password);
-	$this->cnx=$conn;
-		}
-	}
-	
+   define('DB_SERVER', 'mysql13.000webhost.com');
+   define('DB_USERNAME', 'a7394901_admin');
+   define('DB_PASSWORD', '090909');
+   define('DB_DATABASE', 'a7394901_medbox');
+   $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
 ?>
-
