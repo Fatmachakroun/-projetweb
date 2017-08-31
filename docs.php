@@ -1,5 +1,5 @@
 <?php
-$con=mysqli_connect("mysql13.000webhost.com","a7394901_admin","090909","a7394901_medbox");
+$con=mysqli_connect("projetwebsrv.mysql.database.azure.com","mysqluser@projetwebsrv","document");
 // Check connection
 if (mysqli_connect_errno())
 {
