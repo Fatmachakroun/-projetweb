@@ -62,7 +62,7 @@
       <div id="navbar" class="navbar-collapse collapse navbar_area">          
         <ul class="nav navbar-nav navbar-right custom_nav">
           <li><a href="index.html">Home</a></li>
-          <li class="active"><a href="doctors.html">Our Doctors</a></li>
+          <li><a href="doctors.html">Our Doctors</a></li>
           <li><a href="contact.html">Contact Us</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
