@@ -1,11 +1,9 @@
 <?php
-  
+
 $host = 'projetwebsrv.mysql.database.azure.com';
 $username = 'mysqluser@projetwebsrv';
 $password = 'Fatma123';
 $db_name = 'document';
-
-
 //Establishes the connection
 $conn = mysqli_init();
 mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306);
@@ -15,26 +13,34 @@ die('Failed to connect to MySQL: '.mysqli_connect_error());
    session_start();
    
    if($_SERVER["REQUEST_METHOD"] == "POST") {
+      // username and password sent from form 
       
+      $myusername = mysqli_real_escape_string($conn,$_POST['username']);
+      $mypassword = mysqli_real_escape_string($conn,$_POST['password']); 
       
-       $email=$_POST["Email"];
-       $password=$_POST["Password"];
-       $name =$_POST["FullName"];
-       $gender=$_POST["gender"];
-       $numuser=$_POST["NumUser"];
-
-      $sql="insert into User values('$email','$password','$name','$gender','$numuser');";
-
+      $sql = "SELECT Email FROM User WHERE Email = '$myusername' and Password = '$mypassword'";
       $result = mysqli_query($conn,$sql);
-      header("location: login.html");
-
-
+      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+      $active = $row['active'];
       
+      $count = mysqli_num_rows($result);
+      
+      // If result matched $myusername and $mypassword, table row must be 1 row
+    
+      if($count == 1) {
+         session_register("myusername");
+         $_SESSION['login_user'] = $myusername;
+         
+         if ($myusername=="admin")
+         {header("location: welcome_admin.php");}
+         else
+         {header("location: welcome_user.php");}
       }else {
          $error = "Your Login Name or Password is invalid";
       }
-   
+   }
 ?>
+
 
 
 <!DOCTYPE html>
@@ -43,7 +49,7 @@ die('Failed to connect to MySQL: '.mysqli_connect_error());
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MedBox : Inscription</title>
+    <title>SBF PROJECT : Login</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -95,22 +101,15 @@ die('Failed to connect to MySQL: '.mysqli_connect_error());
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">Med<span>Box</span></a>
+       <a class="navbar-brand" href="index.php">SBF <span>PROJECT</span></a>
         <!-- <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"></a> -->
       </div>
       <div id="navbar" class="navbar-collapse collapse navbar_area">          
         <ul class="nav navbar-nav navbar-right custom_nav">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="doctors.html">Our Doctors</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="download.html">Download MedBox</a></li>              
-            </ul>
-          </li>             
-          <li class="active"><a href="insc.html"><B><FONT color="red">Inscription</FONT></B></a></li>
-          <li><a href="login.html"><B><FONT color="red">Login</FONT></B></a></li>                    
+          <li><a href="index.php">Home</a></li>
+          <li><a href="testdoctors.php">Our Doctors</a></li>
+          <li><a href="insc.php"><B><FONT color="red">Inscription</FONT></B></a></li>
+          <li><a href="login.php"><B><FONT color="red">Login</FONT></B></a></li>                      
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -119,7 +118,7 @@ die('Failed to connect to MySQL: '.mysqli_connect_error());
  
   <!-- start banner area -->
   <section id="imgbanner">  
-    <h2><span>Join MedBox Community</span></h2>     
+    <h2><span>Join SBF PROJECT</span></h2>     
   </section>
   <!-- End banner area -->
   
@@ -140,46 +139,23 @@ die('Failed to connect to MySQL: '.mysqli_connect_error());
          <div class="contact_area">
            <div class="client_title">
               <hr>
-              <h2>Join <span>MedBox</span></h2>
+              <h2>Join <span>US</span></h2>
             </div>
             <div class="row">
               <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="contact_left wow fadeInLeft">
-
-
-
-                  <form class="submitphoto_form"  method="post" target="hidden-form">
-                    <input type="text" name="FullName" class="form-control wpcf7-text" placeholder="Your full name">
-                    <input type="mail" name="Email" class="form-control wpcf7-email" placeholder="Email address">          
-                    <input type="Password" name="Password" class="form-control wpcf7-text" placeholder="Password">
+                 
+                  <form class="submitphoto_form" action="" method="post">
                     
-                    <p><h3> What's your gender ? </h3> </p>
-                    <input type="radio" name="gender" value="male"> Male
-                    <input type="radio" name="gender" value="female"> Female
+                    <input type="mail" name="username" class="form-control wpcf7-email" placeholder="Email address">          
+                    <input type="Password" name="password" class="form-control wpcf7-text" placeholder="Password">
+                    <input type="submit" value="Submit" class="wpcf7-submit photo-submit">  
 
-
-                    <input type="Phone" name="NumUser" class="form-control wpcf7-text" placeholder="Phone number">
-               
-                    <input type="submit" name="submit" value="Join MedBox" class="wpcf7-submit photo-submit">    
-
-         
+             
                   </form>
                 </div>                  
               </div>
-
-
-
-              <div class="col-lg-6 col-md-6 col-sm-6">
-                <div class="contact_right wow fadeInRight">
-                  <img src="img/insc.png" alt="img">
-                  <p>Join MedBox community and take care of your health.</p>
-                  <address>
-                    <p><a href="mailto:hello@yourdomain.com"> medbox@gmail.com</a></p>
-                    <p>Tunisia   +216 21 623 544</p>
-                    
-                  </address>
-                </div>
-              </div>
+              
             </div>              
          </div>
         </div>
@@ -189,6 +165,9 @@ die('Failed to connect to MySQL: '.mysqli_connect_error());
   <!-- End Contact section -->
 
 
+  
+ 
+  
 
     
   <!-- jQuery Library -->
@@ -212,5 +191,7 @@ die('Failed to connect to MySQL: '.mysqli_connect_error());
 
   <!-- custom js file include -->
   <script src="js/custom.js"></script>   
+ 
+ 
   </body>
 </html>
