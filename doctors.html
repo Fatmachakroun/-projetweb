@@ -1,28 +1,19 @@
 <?php
-$conn=mysqli_connect("projetwebsrv.mysql.database.azure.com","mysqluser@projetwebsrv","Fatma123","document");
-$query="Select * From Doctor;";
-/// Test connection
-if($conn === false)
-{
-//FatalError("Server unavailable.");
-$writeOutResult = "Connection failed.";
+$serverName = "projetwebsrv.mysql.database.azure.com";
+$connectionOptions = array(
+    "Database" => "document",
+    "Uid" => "mysqluser@projetwebsrv",
+    "PWD" => "Fatma123"
+);
+//Establishes the connection
+$conn = sqlsrv_connect($serverName, $connectionOptions);
+$tsql= "SELECT ID, FullNameDoctor From Doctor;";
+$getResults= sqlsrv_query($conn, $tsql);
+echo ("Reading data from table" . PHP_EOL);
+if ($getResults == FALSE)
+    echo (sqlsrv_errors());
+while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
+ echo ($row['CategoryName'] . " " . $row['ProductName'] . PHP_EOL);
 }
-else
-{
-echo "Connection succeeded";
-$get = sqlsrv_query($conn,$query);
-while ($row = sqlsrv_fetch_array($get, SQLSRV_FETCH_ASSOC))
-{
-$writeOutResult += $row["Column"];
-}
-}
+sqlsrv_free_stmt($getResults);
 ?>
-<html>
-<head><title></title></head>
-<body>
-<p>Output:</p>
-<?php
-echo $writeOutResult;
-?>
-</body>
-</html>
