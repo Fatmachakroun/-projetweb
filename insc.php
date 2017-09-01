@@ -26,7 +26,7 @@ die('Failed to connect to MySQL: '.mysqli_connect_error());
       $sql="insert into User values('$email','$password','$name','$gender','$numuser');";
 
       $result = mysqli_query($conn,$sql);
-      header("location: login.html");
+      header("location: login.php");
 
 
       
@@ -148,7 +148,7 @@ die('Failed to connect to MySQL: '.mysqli_connect_error());
 
                     <input type="Phone" name="NumUser" class="form-control wpcf7-text" placeholder="Phone number">
                
-                    <input type="submit" name="submit" value="Join MedBox" class="wpcf7-submit photo-submit">    
+                    <input type="submit" name="submit" value="Join SBF Project" class="wpcf7-submit photo-submit">    
 
          
                   </form>
