@@ -18,8 +18,8 @@ $result2 = mysqli_query($conn,"SELECT count(*) FROM Doctor");
 
 echo "<table border='3' bgcolor='#CCCCC' cellpadding='0' cellspacing='0' style='border-collapse: collapse' bordercolor='#111111' width='100%' id='AutoNumber1'>
 <tr>
-<th><h3><B>Number of MedBox users</B></h3></th>
-<th><h3><B>Number of Doctors added by MedBox costumers</B></h3></th>
+<th><h3><B>Number of  users</B></h3></th>
+<th><h3><B>Number of Doctors added by users</B></h3></th>
 </tr>";
 $row1 = mysqli_fetch_assoc($result1);
 $row2 = mysqli_fetch_assoc($result2);
