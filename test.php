@@ -25,7 +25,7 @@ die('Failed to connect to MySQL: '.mysqli_connect_error());
 
 
        
-      $sql="INSERT INTO Doctor ( UserEmail, FullNameDoctor, NumDoc, Specialty, Region, Address, FeedBack) VALUES ( $UserEmail, $FullNameDoctor, $NumDoc, $Specialty, $Region, $Address, $FeedBack);";
+      $sql="INSERT INTO Doctor VALUES ( 0, $UserEmail, $FullNameDoctor, $NumDoc, $Specialty, $Region, $Address, $FeedBack);";
       $result = mysqli_query($conn,$sql);
       header("location: test.php");
       
