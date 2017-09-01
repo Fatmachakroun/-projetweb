@@ -85,7 +85,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 col-md-12 wow bounceInLeft">
-          <p>Find doctors added by MedBox costumers, and there ratings.</p>
+          <p>Here, you can</p>
           <p>Find doctors added by costumers, and their ratings.</p>
         </div>
       </div>
