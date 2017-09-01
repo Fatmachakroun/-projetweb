@@ -86,7 +86,7 @@
       <div class="row">
         <div class="col-lg-12 col-md-12 wow bounceInLeft">
           <p>Here, you can</p>
-          <p>Find doctors added by costumers, and their ratings.</p>
+          <p>Find doctors added by costumers and their ratings.</p>
         </div>
       </div>
     </div>
