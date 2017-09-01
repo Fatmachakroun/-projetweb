@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MedBox : Our Doctors</title>
+    <title>Our Doctors</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -86,8 +86,7 @@
       <div class="row">
         <div class="col-lg-12 col-md-12 wow bounceInLeft">
           <p>Find doctors added by MedBox costumers, and there ratings.</p>
-          <p>Find doctors added by MedBox costumers, and there ratings.</p>
-          <p>Find doctors added by MedBox costumers, and there ratings.</p>
+          <p>Find doctors added by costumers, and their ratings.</p>
         </div>
       </div>
     </div>
