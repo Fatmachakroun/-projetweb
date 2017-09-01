@@ -25,15 +25,16 @@ die('Failed to connect to MySQL: '.mysqli_connect_error());
 
 
        
-      $sql="INSERT INTO Doctor (  UserEmail, FullNameDoctor, NumDoc, Specialty, Region, Address, FeedBack) VALUES ( $UserEmail, $FullNameDoctor, $NumDoc, $Specialty, $Region, $Address, $FeedBack);";
+      $sql="INSERT INTO Doctor ( UserEmail, FullNameDoctor, NumDoc, Specialty, Region, Address, FeedBack) VALUES ( $UserEmail, $FullNameDoctor, $NumDoc, $Specialty, $Region, $Address, $FeedBack);";
       $result = mysqli_query($conn,$sql);
-      header("location: testdoc.php");
+      header("location: test.php");
       
       }else {
          $error = "Your Login Name or Password is invalid";
       }
    
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -187,7 +188,7 @@ mysqli_close($conn);
          <div class="contact_area">
            <div class="client_title">
               <hr>
-              <h2>Join <span>US</span></h2>
+              <h2>Add a <span>Doctor</span></h2>
             </div>
             <div class="row">
               <div class="col-lg-6 col-md-6 col-sm-6">
