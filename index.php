@@ -143,12 +143,7 @@ mysqli_close($conn);
                     <h3>Siwar ABBES</h3>
                     <p>Supcom Student</p>
                   </div>
-                  <div class="team_social">
-                    <a href="https://www.facebook.com/medrostom.gharbi.18"><span class="fa fa-facebook"></span></a>
-                    <a href="#"><span class="fa fa-twitter"></span></a>
-                    <a href="https://www.linkedin.com/in/mohamed-rostom-gharbi-207ab312b/fr"><span class="fa fa-linkedin"></span></a>
-                    <a href="#"><span class="fa fa-google-plus"></span></a>
-                  </div>
+                  
                 </li>
                 <li>
                   <div class="team_img">
@@ -158,12 +153,7 @@ mysqli_close($conn);
                     <h3 class="team_name">Balkis GUIRAT</h3>
                     <p>Esprit Student</p>
                   </div>
-                  <div class="team_social">
-                    <a href="https://www.facebook.com/yacine.baccar"><span class="fa fa-facebook"></span></a>
-                    <a href="#"><span class="fa fa-twitter"></span></a>
-                    <a href="https://www.linkedin.com/in/yacine-ben-baccar-563174106"><span class="fa fa-linkedin"></span></a>
-                    <a href="#"><span class="fa fa-google-plus"></span></a>
-                  </div>
+                  
                 </li>
                 <li>
                   <div class="team_img">
@@ -173,12 +163,7 @@ mysqli_close($conn);
                     <h3 class="team_name">Fatma CHAKROUN</h3>
                     <p>Supcom Student</p>
                   </div>
-                  <div class="team_social">
-                    <a href="https://www.facebook.com/profile.php?id=100007104402087"><span class="fa fa-facebook"></span></a>
-                    <a href="#"><span class="fa fa-twitter"></span></a>
-                    <a href="https://www.linkedin.com/in/aymen-mejri-1b10b0122?authType=NAME_SEARCH&authToken=2Adl&locale=fr_FR&srchid=5078456531479935650839&srchindex=1&srchtotal=34&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A5078456531479935650839%2CVSRPtargetId%3A507845653%2CVSRPcmpt%3Aprimary%2CVSRPnm%3Atrue%2CauthType%3ANAME_SEARCH"><span class="fa fa-linkedin"></span></a>
-                    <a href="#"><span class="fa fa-google-plus"></span></a>
-                  </div>
+                  
                 </li> 
               </ul>
             </div>
