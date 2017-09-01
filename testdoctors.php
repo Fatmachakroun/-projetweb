@@ -79,40 +79,6 @@
   <!-- End navbar -->
 
 
-    <!-- start slider section -->
-  <section id="sliderSection">            
-    <div class="mainslider_area">
-      <!-- Start super slider -->
-      <div id="slides">
-        <ul class="slides-container">
-          <!-- Start single slider-->
-          <li>
-            <img src="img/slider/digital_medecine.jpg" alt="img">
-            <div class="slider_caption">
-              <h2><B>Welcome To <span><FONT color="red"> MedBox</FONT></span></B></h2>
-              <p><B><FONT color="red">Take a look at the doctors who were rated by MedBox customers.</FONT></B></p>
-            </div>
-          </li> 
-          <!-- Start single slider-->           
-          
-          <!-- Start single slider-->
-          <li>
-            <img src="img/slider/4.jpg" alt="img">
-             <div class="slider_caption">
-              <h2><span>And feel free to add the ones you know,</span> to help the needy.</h2>
-            </div>
-           </li>
-        </ul>
-        <nav class="slides-navigation">
-          <a href="#" class="next"></a>
-          <a href="#" class="prev"></a>
-        </nav>
-      </div>
-    </div>
-  </div>    
-  </section>
-  <!-- End slider section -->
- 
 
 <!-- start special quote -->
   <section id="specialQuote">
