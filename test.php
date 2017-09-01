@@ -1,5 +1,5 @@
 <?php
-
+  
 $host = 'projetwebsrv.mysql.database.azure.com';
 $username = 'mysqluser@projetwebsrv';
 $password = 'Fatma123';
@@ -13,43 +13,34 @@ die('Failed to connect to MySQL: '.mysqli_connect_error());
    session_start();
    
    if($_SERVER["REQUEST_METHOD"] == "POST") {
-      // username and password sent from form 
       
-      $myusername = mysqli_real_escape_string($conn,$_POST['username']);
-      $mypassword = mysqli_real_escape_string($conn,$_POST['password']); 
       
-      $sql = "SELECT Email FROM User WHERE Email = '$myusername' and Password = '$mypassword'";
+       $UserEmail=$_POST["Email"];
+       $FullNameDoctor=$_POST["FullNameDoctor"];
+       $NumDoc =$_POST["NumDoc"];
+       $Specialty=$_POST["Specialty"];
+       $Region=$_POST["Region"];
+       $Address=$_POST["Address"];
+       $FeedBack=$_POST["FeedBack"];
+
+
+       
+      $sql="INSERT INTO Doctor (  UserEmail, FullNameDoctor, NumDoc, Specialty, Region, Address, FeedBack) VALUES ( $UserEmail, $FullNameDoctor, $NumDoc, $Specialty, $Region, $Address, $FeedBack);";
       $result = mysqli_query($conn,$sql);
-      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-      $active = $row['active'];
+      header("location: testdoc.php");
       
-      $count = mysqli_num_rows($result);
-      
-      // If result matched $myusername and $mypassword, table row must be 1 row
-    
-      if($count == 1) {
-         session_register("myusername");
-         $_SESSION['login_user'] = $myusername;
-         
-         if ($myusername=="admin")
-         {header("location: welcome_admin.php");}
-         else
-         {header("location: insc.php");}
       }else {
          $error = "Your Login Name or Password is invalid";
       }
-   }
+   
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SBF PROJECT : Login</title>
+    <title>Our Doctors</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -101,27 +92,84 @@ die('Failed to connect to MySQL: '.mysqli_connect_error());
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-       <a class="navbar-brand" href="index.php">SBF <span>PROJECT</span></a>
+        <a class="navbar-brand" href="index.html">SBF <span>PROJECT</span></a>
         <!-- <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"></a> -->
       </div>
       <div id="navbar" class="navbar-collapse collapse navbar_area">          
         <ul class="nav navbar-nav navbar-right custom_nav">
           <li><a href="index.php">Home</a></li>
-          <li><a href="testdoctors.php">Our Doctors</a></li>
-          <li><a href="insc.php"><B><FONT color="red">Inscription</FONT></B></a></li>
-          <li><a href="login.php"><B><FONT color="red">Login</FONT></B></a></li>                      
+          <li><a href="doctors.html">Our Doctors</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="download.html">Download MedBox</a></li>              
+            </ul>
+          </li>             
+          <li><a href="insc.html"><B><FONT color="red">Inscription</FONT></B></a></li>
+          <li><a href="login.html"><B><FONT color="red">Login</FONT></B></a></li>                    
         </ul>
       </div><!--/.nav-collapse -->
     </div>
   </nav>
   <!-- End navbar -->
- 
-  <!-- start banner area -->
-  <section id="imgbanner">  
-    <h2><span>Join SBF PROJECT</span></h2>     
+
+
+
+<!-- start special quote -->
+  <section id="specialQuote">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 wow bounceInLeft">
+          <p>Here, you can</p>
+          <p>Find doctors added by costumers.</p>
+        </div>
+      </div>
+    </div>
   </section>
-  <!-- End banner area -->
-  
+  <!-- End special quote -->
+
+
+<?php
+$host = 'projetwebsrv.mysql.database.azure.com';
+$username = 'mysqluser@projetwebsrv';
+$password = 'Fatma123';
+$db_name = 'document';
+//Establishes the connection
+$conn = mysqli_init();
+mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306);
+if (mysqli_connect_errno($conn)) {
+die('Failed to connect to MySQL: '.mysqli_connect_error());
+}
+//Run the Select query
+printf("Our doctors: \n");
+$res = mysqli_query($conn, 'SELECT FullNameDoctor, NumDoc, Specialty, Region,  Address, FeedBack  FROM Doctor;');
+echo "<table border='9' bgcolor='#CCCCC' cellpadding='0' cellspacing='0' style='border-collapse: collapse' bordercolor='#111111' width='100%' id='AutoNumber1'>
+<tr>
+<th>Doctor's name</th>
+<th>Doctor's number</th>
+<th>Doctor's speciality</th>
+<th>Doctor's region</th>
+<th>Doctor's addres</th>
+<th>Doctor's feedback</th>
+</tr>";
+while ($row = mysqli_fetch_assoc($res)) {
+//var_dump($row);
+echo "<tr>";
+echo "<td>" . $row['FullNameDoctor'] . "</td>";
+echo "<td>" . $row['NumDoc'] . "</td>";
+echo "<td>" . $row['Specialty'] . "</td>";
+echo "<td>" . $row['Region'] . "</td>";
+echo "<td>" . $row['Address'] . "</td>";
+echo "<td>" . $row['FeedBack'] . "</td>";
+echo "</tr>";
+}
+echo "</table>";
+//Close the connection
+mysqli_close($conn);
+?>
+
+ 
 
   <!-- start Contact section -->
   <section id="contact">
@@ -144,18 +192,32 @@ die('Failed to connect to MySQL: '.mysqli_connect_error());
             <div class="row">
               <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="contact_left wow fadeInLeft">
-                 
-                  <form class="submitphoto_form" action="" method="post">
-                    
-                    <input type="mail" name="username" class="form-control wpcf7-email" placeholder="Email address">          
-                    <input type="Password" name="password" class="form-control wpcf7-text" placeholder="Password">
-                    <input type="submit" value="Submit" class="wpcf7-submit photo-submit">  
 
-             
+
+
+                  <form class="submitphoto_form"  method="post" target="hidden-form">
+
+                    <input type="mail" name="Email" class="form-control wpcf7-email" placeholder="Your Email address">    
+                    <input type="text" name="FullNameDoctor" class="form-control wpcf7-text" placeholder="Doctor's name">
+                    <input type="Phone" name="NumDoc" class="form-control wpcf7-text" placeholder="Doctor's phone number">
+                    <input type="text" name="Specialty" class="form-control wpcf7-text" placeholder="Doctor's speciality">
+                    <input type="text" name="Region" class="form-control wpcf7-text" placeholder="Doctor's region">
+                    <input type="text" name="Address" class="form-control wpcf7-text" placeholder="Doctor's address">
+                    <input type="text" name="FeedBack" class="form-control wpcf7-text" placeholder="Doctor's feedback">
+                          
+                    
+                    <input type="submit" name="submit" value="Add doctor" class="wpcf7-submit photo-submit">    
+
+         
                   </form>
                 </div>                  
               </div>
-              
+
+
+
+                  </address>
+                </div>
+              </div>
             </div>              
          </div>
         </div>
@@ -165,9 +227,8 @@ die('Failed to connect to MySQL: '.mysqli_connect_error());
   <!-- End Contact section -->
 
 
-  
- 
-  
+
+
 
     
   <!-- jQuery Library -->
