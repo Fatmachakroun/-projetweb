@@ -12,24 +12,23 @@ die('Failed to connect to MySQL: '.mysqli_connect_error());
 }
    session_start();
    
-   if($_SERVER["REQUEST_METHOD"] == "POST") {
+   
       
       
-       $useremail=$_POST["Email"];
-       $fullnamedoctor=$_POST["FullNameDoctor"];
-       $numdoc =$_POST["NumDoc"];
-       $specialty=$_POST["Specialty"];
-       $region=$_POST["Region"];
-       $address=$_POST["Address"];
-       $feedback=$_POST["FeedBack"];
+       $useremail='siwar.abbes@supcom.tn';
+       $fullnamedoctor='Ahmed Sobhi';
+       $numdoc ='53214547';
+       $specialty='Generaliste';
+       $region='Ben arous';
+       $address='Hammam lif';
+       $feedback='Good';
 
 
       $sql="INSERT INTO Doctor  VALUES ( $useremail, $fullnamedoctor, $bumdoc, $specialty, $region, $address, $feedback);";
       $result = mysqli_query($conn,$sql);
       header("location: test.php");
       
-      }else {
-         $error = "Your Login Name or Password is invalid";
-      }
+     
+   
    
 ?>
