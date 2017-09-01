@@ -72,6 +72,22 @@
   <!-- End navbar -->
 
 
+
+<!-- start special quote -->
+  <section id="specialQuote">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 wow bounceInLeft">
+          <p>Here, you can</p>
+          <p>Find doctors added by costumers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End special quote -->
+
+
+
 <?php
 $host = 'projetwebsrv.mysql.database.azure.com';
 $username = 'mysqluser@projetwebsrv';
