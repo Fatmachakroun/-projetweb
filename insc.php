@@ -43,7 +43,7 @@ die('Failed to connect to MySQL: '.mysqli_connect_error());
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MedBox : Inscription</title>
+    <title>SBF PROJECT : Inscription</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -95,34 +95,22 @@ die('Failed to connect to MySQL: '.mysqli_connect_error());
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">Med<span>Box</span></a>
+        <a class="navbar-brand" href="index.php">SBF <span>PROJECT</span></a>
         <!-- <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"></a> -->
       </div>
       <div id="navbar" class="navbar-collapse collapse navbar_area">          
         <ul class="nav navbar-nav navbar-right custom_nav">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="doctors.html">Our Doctors</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="download.html">Download MedBox</a></li>              
-            </ul>
-          </li>             
-          <li class="active"><a href="insc.html"><B><FONT color="red">Inscription</FONT></B></a></li>
-          <li><a href="login.html"><B><FONT color="red">Login</FONT></B></a></li>                    
+          <li><a href="index.php">Home</a></li>
+          <li><a href="testdoctors.php">Our Doctors</a></li>
+          <li><a href="insc.php"><B><FONT color="red">Inscription</FONT></B></a></li>
+          <li><a href="login.php"><B><FONT color="red">Login</FONT></B></a></li>                      
         </ul>
       </div><!--/.nav-collapse -->
     </div>
   </nav>
   <!-- End navbar -->
  
-  <!-- start banner area -->
-  <section id="imgbanner">  
-    <h2><span>Join MedBox Community</span></h2>     
-  </section>
-  <!-- End banner area -->
-  
+ 
 
   <!-- start Contact section -->
   <section id="contact">
@@ -140,7 +128,7 @@ die('Failed to connect to MySQL: '.mysqli_connect_error());
          <div class="contact_area">
            <div class="client_title">
               <hr>
-              <h2>Join <span>MedBox</span></h2>
+              <h2>Join <span>US</span></h2>
             </div>
             <div class="row">
               <div class="col-lg-6 col-md-6 col-sm-6">
@@ -169,14 +157,6 @@ die('Failed to connect to MySQL: '.mysqli_connect_error());
 
 
 
-              <div class="col-lg-6 col-md-6 col-sm-6">
-                <div class="contact_right wow fadeInRight">
-                  <img src="img/insc.png" alt="img">
-                  <p>Join MedBox community and take care of your health.</p>
-                  <address>
-                    <p><a href="mailto:hello@yourdomain.com"> medbox@gmail.com</a></p>
-                    <p>Tunisia   +216 21 623 544</p>
-                    
                   </address>
                 </div>
               </div>
