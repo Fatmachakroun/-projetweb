@@ -1,19 +1,23 @@
 <?php
-$serverName = "projetwebsrv.mysql.database.azure.com";
-$connectionOptions = array(
-    "Database" => "document",
-    "Uid" => "mysqluser@projetwebsrv",
-    "PWD" => "Fatma123"
-);
+$host = 'projetwebsrv.mysql.database.azure.com';
+$username = 'mysqluser@projetwebsrv';
+$password = 'Fatma123';
+$db_name = 'document';
+
 //Establishes the connection
-$conn = sqlsrv_connect($serverName, $connectionOptions);
-$tsql= "SELECT ID, FullNameDoctor From Doctor;";
-$getResults= sqlsrv_query($conn, $tsql);
-echo ("Reading data from table" . PHP_EOL);
-if ($getResults == FALSE)
-    echo (sqlsrv_errors());
-while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
- echo ($row['ID'] . " " . $row['FullNameDoctor'] . PHP_EOL);
+$conn = mysqli_init();
+mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306);
+if (mysqli_connect_errno($conn)) {
+die('Failed to connect to MySQL: '.mysqli_connect_error());
 }
-sqlsrv_free_stmt($getResults);
+
+//Run the Select query
+printf("Reading data from table: \n");
+$res = mysqli_query($conn, 'SELECT * FROM Doctor');
+while ($row = mysqli_fetch_assoc($res)) {
+var_dump($row);
+}
+
+//Close the connection
+mysqli_close($conn);
 ?>
