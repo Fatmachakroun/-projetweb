@@ -34,7 +34,7 @@ die('Failed to connect to MySQL: '.mysqli_connect_error());
          if ($myusername=="admin")
          {header("location: welcome_admin.php");}
          else
-         {header("location: welcome_user.php");}
+         {header("location: insc.php");}
       }else {
          $error = "Your Login Name or Password is invalid";
       }
