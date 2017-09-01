@@ -1,8 +1,10 @@
 <?php
+
 $host = 'projetwebsrv.mysql.database.azure.com';
 $username = 'mysqluser@projetwebsrv';
 $password = 'Fatma123';
 $db_name = 'document';
+
 //Establishes the connection
 $conn = mysqli_init();
 mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306);
@@ -11,8 +13,9 @@ die('Failed to connect to MySQL: '.mysqli_connect_error());
 }
 //Run the Select query
 printf("Some statics: \n");
-$result1 = mysqli_query($con,"SELECT count(*) FROM User");
-$result2 = mysqli_query($con,"SELECT count(*) FROM Doctor");
+$result1 = mysqli_query($conn,"SELECT count(*) FROM User");
+$result2 = mysqli_query($conn,"SELECT count(*) FROM Doctor");
+
 echo "<table border='3' bgcolor='#CCCCC' cellpadding='0' cellspacing='0' style='border-collapse: collapse' bordercolor='#111111' width='100%' id='AutoNumber1'>
 <tr>
 <th><h3><B>Number of MedBox users</B></h3></th>
@@ -25,5 +28,6 @@ echo "<td style='text-align:center;'><h4><B>".   $row1['count(*)'] .    "</B></h
 echo "<td style='text-align:center;'><h4><B>".   $row2['count(*)'] .    "</B></h4></td>";
 echo "</tr>";
 echo "</table>";
-mysqli_close($con);
+mysqli_close($conn);
 ?>
+
