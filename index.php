@@ -79,7 +79,7 @@
       <div class="row">
         <div class="col-lg-12 col-md-12 wow bounceInLeft">
           <p>Here, you can</p>
-          <p>Find doctors added by costumers.</p>
+          <p>Here, you can add doctors and check your medecines intake.</p>
         </div>
       </div>
     </div>
@@ -131,7 +131,7 @@ mysqli_close($conn);
             <div class="team_title">
               <hr>
               <h2>Meet <span>Our Team</span></h2>
-              <p>We are student from Supcom.</p>
+              <p>We are students doing an internship in Intilaq.</p>
             </div>
             <div class="team">
               <ul class="team_nav">
@@ -140,7 +140,7 @@ mysqli_close($conn);
                     <img src="img/rostom.jpg" alt="team-img">
                   </div>
                   <div class="team_content">
-                    <h3>Gharbi Med Rostom</h3>
+                    <h3>Siwar ABBES</h3>
                     <p>Supcom Student</p>
                   </div>
                   <div class="team_social">
@@ -155,8 +155,8 @@ mysqli_close($conn);
                     <img src="img/yacine.jpg" alt="team-img">
                   </div>
                   <div class="team_content">
-                    <h3 class="team_name">Ben Baccar Yacine</h3>
-                    <p>Supcom Student</p>
+                    <h3 class="team_name">Balkis GUIRAT</h3>
+                    <p>Esprit Student</p>
                   </div>
                   <div class="team_social">
                     <a href="https://www.facebook.com/yacine.baccar"><span class="fa fa-facebook"></span></a>
@@ -170,7 +170,7 @@ mysqli_close($conn);
                     <img src="img/mejri.jpg" alt="team-img">
                   </div>
                   <div class="team_content">
-                    <h3 class="team_name">Mejri Aymen</h3>
+                    <h3 class="team_name">Fatma CHAKROUN</h3>
                     <p>Supcom Student</p>
                   </div>
                   <div class="team_social">
