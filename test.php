@@ -15,17 +15,16 @@ die('Failed to connect to MySQL: '.mysqli_connect_error());
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       
       
-       $UserEmail=$_POST["Email"];
-       $FullNameDoctor=$_POST["FullNameDoctor"];
-       $NumDoc =$_POST["NumDoc"];
-       $Specialty=$_POST["Specialty"];
-       $Region=$_POST["Region"];
-       $Address=$_POST["Address"];
-       $FeedBack=$_POST["FeedBack"];
+       $useremail=$_POST["Email"];
+       $fullnamedoctor=$_POST["FullNameDoctor"];
+       $numdoc =$_POST["NumDoc"];
+       $specialty=$_POST["Specialty"];
+       $region=$_POST["Region"];
+       $address=$_POST["Address"];
+       $feedback=$_POST["FeedBack"];
 
 
-       
-      $sql="INSERT INTO Doctor VALUES ( 0, $UserEmail, $FullNameDoctor, $NumDoc, $Specialty, $Region, $Address, $FeedBack);";
+      $sql="INSERT INTO Doctor  VALUES ( $useremail, $fullnamedoctor, $bumdoc, $specialty, $region, $address, $feedback);";
       $result = mysqli_query($conn,$sql);
       header("location: test.php");
       
@@ -34,6 +33,7 @@ die('Failed to connect to MySQL: '.mysqli_connect_error());
       }
    
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
