@@ -137,7 +137,7 @@ mysqli_close($conn);
               <ul class="team_nav">
                 <li>
                   <div class="team_img">
-                    <img src="img/rostom.jpg" alt="team-img">
+                    <img src="img/siwar.jpg" alt="team-img">
                   </div>
                   <div class="team_content">
                     <h3>Siwar ABBES</h3>
@@ -147,7 +147,7 @@ mysqli_close($conn);
                 </li>
                 <li>
                   <div class="team_img">
-                    <img src="img/yacine.jpg" alt="team-img">
+                    <img src="img/balkiss.jpg" alt="team-img">
                   </div>
                   <div class="team_content">
                     <h3 class="team_name">Balkis GUIRAT</h3>
@@ -157,7 +157,7 @@ mysqli_close($conn);
                 </li>
                 <li>
                   <div class="team_img">
-                    <img src="img/mejri.jpg" alt="team-img">
+                    <img src="img/fatma.jpg" alt="team-img">
                   </div>
                   <div class="team_content">
                     <h3 class="team_name">Fatma CHAKROUN</h3>
