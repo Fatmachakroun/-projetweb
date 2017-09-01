@@ -140,11 +140,11 @@ mysqli_close($conn);
                     <img src="img/siwar.jpg" alt="team-img">
                   </div>
                   <div class="team_content">
-                    <h3>Siwar ABBES</h3>
+                    <h3 class="team_name">Siwar ABBES</h3>
                     <p>Supcom Student</p>
                   </div>
-                  
                 </li>
+                
                 <li>
                   <div class="team_img">
                     <img src="img/balkiss.jpg" alt="team-img">
@@ -161,7 +161,7 @@ mysqli_close($conn);
                   </div>
                   <div class="team_content">
                     <h3 class="team_name">Fatma CHAKROUN</h3>
-                    <p>Supcom Student</p>
+                    <p>Esprit Student</p>
                   </div>
                   
                 </li> 
