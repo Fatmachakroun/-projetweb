@@ -86,6 +86,8 @@
       <div class="row">
         <div class="col-lg-12 col-md-12 wow bounceInLeft">
           <p>Find doctors added by MedBox costumers, and there ratings.</p>
+          <p>Find doctors added by MedBox costumers, and there ratings.</p>
+          <p>Find doctors added by MedBox costumers, and there ratings.</p>
         </div>
       </div>
     </div>
@@ -105,7 +107,7 @@ if (mysqli_connect_errno($conn)) {
 die('Failed to connect to MySQL: '.mysqli_connect_error());
 }
 //Run the Select query
-printf("Reading data from table: \n");
+printf("Our doctors: \n");
 $res = mysqli_query($conn, 'SELECT FullNameDoctor, NumDoc, Specialty, Region,  Address, FeedBack  FROM Doctor;');
 echo "<table border='9' bgcolor='#CCCCC' cellpadding='0' cellspacing='0' style='border-collapse: collapse' bordercolor='#111111' width='100%' id='AutoNumber1'>
 <tr>
