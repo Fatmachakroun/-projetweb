@@ -11,17 +11,17 @@
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       
       
-      $medname = mysqli_real_escape_string($db,$_POST['MedName']);
-      $type = mysqli_real_escape_string($db,$_POST['MedType']);
-      $startdate = mysqli_real_escape_string($db,$_POST['StartDate']);
-      $finishdate = mysqli_real_escape_string($db,$_POST['FinishDate']);
-      $timeofintake = mysqli_real_escape_string($db,$_POST['MedTime']);
-      $description = mysqli_real_escape_string($db,$_POST['MedDesc']);
+      $medname = mysqli_real_escape_string($conn,$_POST['MedName']);
+      $type = mysqli_real_escape_string($conn,$_POST['MedType']);
+      $startdate = mysqli_real_escape_string($conn,$_POST['StartDate']);
+      $finishdate = mysqli_real_escape_string($conn,$_POST['FinishDate']);
+      $timeofintake = mysqli_real_escape_string($conn,$_POST['MedTime']);
+      $description = mysqli_real_escape_string($conn,$_POST['MedDesc']);
 
       
       $sql = "insert into Meds values(id,'$login_session','$medname','$type','$startdate','$finishdate','$timeofintake',StatusMed,'$description');";
 
-      $result = mysqli_query($db,$sql);
+      $result = mysqli_query($conn,$sql);
       header("location: welcome_user.php");
       
       }else {
@@ -38,17 +38,17 @@
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       
       
-      $FullNameDoctor = mysqli_real_escape_string($db,$_POST['DocName']);
-      $NumDoc = mysqli_real_escape_string($db,$_POST['DocNum']);
-      $Speciality = mysqli_real_escape_string($db,$_POST['DocSpec']);
-      $Region = mysqli_real_escape_string($db,$_POST['DocRegion']);
-      $Address = mysqli_real_escape_string($db,$_POST['DocAddress']);
-      $FeedBack = mysqli_real_escape_string($db,$_POST['DocFeed']);
+      $FullNameDoctor = mysqli_real_escape_string($conn,$_POST['DocName']);
+      $NumDoc = mysqli_real_escape_string($conn,$_POST['DocNum']);
+      $Speciality = mysqli_real_escape_string($conn,$_POST['DocSpec']);
+      $Region = mysqli_real_escape_string($conn,$_POST['DocRegion']);
+      $Address = mysqli_real_escape_string($conn,$_POST['DocAddress']);
+      $FeedBack = mysqli_real_escape_string($conn,$_POST['DocFeed']);
 
       
       $sql = "insert into Doctor values(id,'$login_session','$FullNameDoctor','$NumDoc', '$Speciality','$Region','$Address','$FeedBack');";
 
-      $result = mysqli_query($db,$sql);
+      $result = mysqli_query($conn,$sql);
       header("location: welcome_user.php");
       
       }else {
