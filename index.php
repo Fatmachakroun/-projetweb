@@ -150,7 +150,7 @@ mysqli_close($conn);
                     <img src="img/balkiss.jpg" alt="team-img">
                   </div>
                   <div class="team_content">
-                    <h3 class="team_name">Balkis GUIRAT</h3>
+                    <h3 class="team_name">Balkiss GUIRAT</h3>
                     <p>Esprit Student</p>
                   </div>
                   
