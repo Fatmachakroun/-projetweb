@@ -268,21 +268,28 @@ mysqli_close($conn);
   <section id="specialQuote">
     <div class="container">
       <div class="row">
-        <div class="col-lg-12 col-md-12 wow bounceInLeft">
+          <div class="col-lg-12 col-md-12 wow bounceInLeft">
           <p>Delete Doctor</p>
-        </div>
+          </div>
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="contact_left wow fadeInLeft">
+                  <form class="submitphoto_form"  method="post" target="hidden-form">
+                    
+                    <input type="text" name="DocTorName" class="form-control wpcf7-email" placeholder="Doctor name to delete">          
+                    <input type="submit" value="Delete" class="wpcf7-submit photo-submit">  
+
+                  </form>
+
+                </div>
+              </div>
+            </div>
       </div>
     </div>
   </section>
   <!-- End special quote -->
 
-            <form class="submitphoto_form"  method="post" target="hidden-form">
-                    
-                    <input type="text" name="DocTorName" class="form-control wpcf7-email" placeholder="Doctor name to delete">          
-                    <input type="submit" value="Delete" class="wpcf7-submit photo-submit">  
-
-             
-             </form>
+            
 
 
 
