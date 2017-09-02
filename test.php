@@ -276,13 +276,13 @@ mysqli_close($conn);
   </section>
   <!-- End special quote -->
 
- <form class="submitphoto_form" action="" method="post">
+            <form class="submitphoto_form"  method="post" target="hidden-form">
                     
                     <input type="text" name="DocTorName" class="form-control wpcf7-email" placeholder="Doctor name to delete">          
                     <input type="submit" value="Delete" class="wpcf7-submit photo-submit">  
 
              
-</form>
+             </form>
 
 
 
