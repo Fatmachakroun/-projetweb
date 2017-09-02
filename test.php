@@ -102,7 +102,7 @@ die('Failed to connect to MySQL: '.mysqli_connect_error());
               SET Region = '$docnameupdateregion'
                  
               WHERE Doctor.FullNameDoctor = '$docnameupdate2' ;";
-      $result = mysqli_query($conn,$sql1);
+      $result1 = mysqli_query($conn,$sql1);
 
 
       $sql2 = "UPDATE Doctor
@@ -110,7 +110,7 @@ die('Failed to connect to MySQL: '.mysqli_connect_error());
               SET Address = '$docnameupdateadress'
                  
               WHERE Doctor.FullNameDoctor = 'docnameupdate2' ;";
-      $result = mysqli_query($conn,$sql2);
+      $result2 = mysqli_query($conn,$sql2);
 
 
 
