@@ -187,14 +187,14 @@ mysqli_close($conn);
              <ul class="clb_nav wow flipInX">
                
                <li><img src="img/intilaq.jpg" alt="brand-img"></li>
-               <li><img src="img/supcom.jpg" alt="brand-img"></li>
-               <li><img src="img/esprit.jpg" alt="brand-img"></li>
+               <li><img src="img/supcom.png" alt="brand-img"></li>
+               <li><img src="img/esprit.png" alt="brand-img"></li>
                <li><img src="img/intilaq.jpg" alt="brand-img"></li>
-               <li><img src="img/supcom.jpg" alt="brand-img"></li>
-               <li><img src="img/esprit.jpg" alt="brand-img"></li>
+               <li><img src="img/supcom.png" alt="brand-img"></li>
+               <li><img src="img/esprit.png" alt="brand-img"></li>
                <li><img src="img/intilaq.jpg" alt="brand-img"></li>
-               <li><img src="img/supcom.jpg" alt="brand-img"></li>
-               <li><img src="img/esprit.jpg" alt="brand-img"></li>
+               <li><img src="img/supcom.png" alt="brand-img"></li>
+               <li><img src="img/esprit.png" alt="brand-img"></li>
               
            </ul>
              <!-- End clients brand slider -->
