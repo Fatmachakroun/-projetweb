@@ -464,6 +464,39 @@ mysqli_close($conn);
   <!-- End special quote -->
 
 
+   <!-- start clients brand area -->
+  <section id="clients_brand">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="clients_brand_area wow flipInX">
+            <div class="client_title">
+              <hr>
+              <h2><span>Thanks</span> to</h2>
+            </div>              
+            <div class="clients_brand">
+              <!-- Start clients brand slider -->
+             <ul class="clb_nav wow flipInX">
+               
+               <li><img src="img/intilaq.jpg" alt="brand-img"></li>
+               <li><img src="img/supcom.png" alt="brand-img"></li>
+               <li><img src="img/esprit.png" alt="brand-img"></li>
+               <li><img src="img/intilaq.jpg" alt="brand-img"></li>
+               <li><img src="img/supcom.png" alt="brand-img"></li>
+               <li><img src="img/esprit.png" alt="brand-img"></li>
+               <li><img src="img/intilaq.jpg" alt="brand-img"></li>
+               <li><img src="img/supcom.png" alt="brand-img"></li>
+               <li><img src="img/esprit.png" alt="brand-img"></li>
+              
+           </ul>
+             <!-- End clients brand slider -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End clients brand area -->  
 
     
   <!-- jQuery Library -->
