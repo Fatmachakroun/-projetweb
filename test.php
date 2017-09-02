@@ -71,6 +71,52 @@ session_start();
 ?>
 
 
+
+<?php
+   
+
+$host = 'projetwebsrv.mysql.database.azure.com';
+$username = 'mysqluser@projetwebsrv';
+$password = 'Fatma123';
+$db_name = 'document';
+//Establishes the connection
+$conn = mysqli_init();
+mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306);
+if (mysqli_connect_errno($conn)) {
+die('Failed to connect to MySQL: '.mysqli_connect_error());
+}
+
+   session_start();
+   
+   if($_SERVER["REQUEST_METHOD"] == "POST") {
+      // username and password sent from form 
+      
+      $docnameupdate1 = mysqli_real_escape_string($conn,$_POST['DoctorNameUpdatePhone']);
+      $docnameupdatephone = mysqli_real_escape_string($conn,$_POST['NewPhoneUpdate']); 
+      
+
+
+      
+      
+      $sql = "UPDATE Doctor
+              
+              SET Doctor.NumDoc = '$docnameupdatephone' 
+                 
+              WHERE Doctor.FullNameDoctor = '$docnameupdate1' ;";
+
+      $result = mysqli_query($conn,$sql);
+
+      header("location: test.php");
+     
+      
+      
+      }else {
+         $error = "Your Login Name or Password is invalid";
+      }
+   
+?>
+
+
 <?php
    
 
@@ -314,7 +360,7 @@ mysqli_close($conn);
     <div class="container">
       <div class="row">
           <div class="col-lg-12 col-md-12 wow bounceInLeft">
-          <p>Delete Doctor</p>
+          <p>DELETE Doctor</p>
           </div>
             <div class="row">
               <div class="col-lg-6 col-md-6 col-sm-6">
@@ -355,7 +401,7 @@ mysqli_close($conn);
          <div class="contact_area">
            <div class="client_title">
               <hr>
-              <h2>Update Doctor's <span>Phone</span></h2>
+              <h2>UPDATE Doctor's <span>Phone</span></h2>
             </div>
             <div class="row">
               <div class="col-lg-6 col-md-6 col-sm-6">
@@ -365,16 +411,10 @@ mysqli_close($conn);
 
                   <form class="submitphoto_form"  method="post" target="hidden-form">
 
-                    <input type="mail" name="Email" class="form-control wpcf7-email" placeholder="Your Email address">    
-                    <input type="text" name="FullNameDoctor" class="form-control wpcf7-text" placeholder="Doctor's name">
-                    <input type="Phone" name="NumDoc" class="form-control wpcf7-text" placeholder="Doctor's phone number">
-                    <input type="text" name="Specialty" class="form-control wpcf7-text" placeholder="Doctor's speciality">
-                    <input type="text" name="Region" class="form-control wpcf7-text" placeholder="Doctor's region">
-                    <input type="text" name="Address" class="form-control wpcf7-text" placeholder="Doctor's address">
-                    <input type="text" name="FeedBack" class="form-control wpcf7-text" placeholder="Doctor's feedback">
-                          
-                    
-                    <input type="submit" name="submit" value="Add doctor" class="wpcf7-submit photo-submit">    
+                      
+                    <input type="text" name="DoctorNameUpdatePhone" class="form-control wpcf7-text" placeholder="Doctor's name to update">
+                    <input type="Phone" name="NewPhoneUpdate" class="form-control wpcf7-text" placeholder="Doctor's new phone number">
+                    <input type="submit" name="submit" value="UPDATE" class="wpcf7-submit photo-submit">    
 
          
                   </form>
@@ -404,7 +444,7 @@ mysqli_close($conn);
     <div class="container">
       <div class="row">
           <div class="col-lg-12 col-md-12 wow bounceInLeft">
-          <p>Update Doctor's Region and Adress</p>
+          <p>UPDATE Doctor's Region and Adress</p>
           </div>
             <div class="row">
               <div class="col-lg-6 col-md-6 col-sm-6">
@@ -413,7 +453,7 @@ mysqli_close($conn);
                     <input type="text" name="DoctorNameUpdateAdress" class="form-control wpcf7-email" placeholder="Doctor name to update">  
                     <input type="text" name="NewRegionUpdate" class="form-control wpcf7-email" placeholder="Doctor's new region">
                     <input type="text" name="NewAdressUpdate" class="form-control wpcf7-email" placeholder="Doctor's new adress">            
-                    <input type="submit" value="Update" class="wpcf7-submit photo-submit">  
+                    <input type="submit" value="UPDATE" class="wpcf7-submit photo-submit">  
 
                   </form>
 
