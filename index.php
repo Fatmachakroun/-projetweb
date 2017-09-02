@@ -46,7 +46,7 @@
   <!-- End Preloader -->   
   <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
   
-  <!-- start navbar -->
+   <!-- start navbar -->
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
       <div class="navbar-header">
@@ -62,9 +62,8 @@
       <div id="navbar" class="navbar-collapse collapse navbar_area">          
         <ul class="nav navbar-nav navbar-right custom_nav">
           <li><a href="index.php">Home</a></li>
-          <li><a href="testdoctors.php">Our Doctors</a></li>
-          <li><a href="insc.php"><B><FONT color="red">Inscription</FONT></B></a></li>
-          <li><a href="login.php"><B><FONT color="red">Login</FONT></B></a></li>                      
+          <li><a href="test.php"><B><FONT color="red">Our Doctors</FONT></B></a></li>
+                          
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -79,7 +78,7 @@
       <div class="row">
         <div class="col-lg-12 col-md-12 wow bounceInLeft">
           <p>Here, you can</p>
-          <p>Here, you can add doctors and check your medecines intake.</p>
+          <p>Here, you can add doctors.</p>
         </div>
       </div>
     </div>
@@ -100,21 +99,20 @@ mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306);
 if (mysqli_connect_errno($conn)) {
 die('Failed to connect to MySQL: '.mysqli_connect_error());
 }
+
 //Run the Select query
 printf("Some statics: \n");
-$result1 = mysqli_query($conn,"SELECT count(*) FROM User");
-$result2 = mysqli_query($conn,"SELECT count(*) FROM Doctor");
+
+$result = mysqli_query($conn,"SELECT count(*) FROM Doctor");
 
 echo "<table border='3' bgcolor='#CCCCC' cellpadding='0' cellspacing='0' style='border-collapse: collapse' bordercolor='#111111' width='100%' id='AutoNumber1'>
 <tr>
-<th><h3><B>Number of  users</B></h3></th>
 <th><h3><B>Number of Doctors added by users</B></h3></th>
 </tr>";
-$row1 = mysqli_fetch_assoc($result1);
-$row2 = mysqli_fetch_assoc($result2);
+
+$row = mysqli_fetch_assoc($result);
 echo "<tr>";
-echo "<td style='text-align:center;'><h4><B>".   $row1['count(*)'] .    "</B></h4></td>";
-echo "<td style='text-align:center;'><h4><B>".   $row2['count(*)'] .    "</B></h4></td>";
+echo "<td style='text-align:center;'><h4><B>".   $row['count(*)'] .    "</B></h4></td>";
 echo "</tr>";
 echo "</table>";
 mysqli_close($conn);
