@@ -35,6 +35,42 @@ die('Failed to connect to MySQL: '.mysqli_connect_error());
 ?>
 
 
+
+
+<?php
+
+$host = 'projetwebsrv.mysql.database.azure.com';
+$username = 'mysqluser@projetwebsrv';
+$password = 'Fatma123';
+$db_name = 'document';
+//Establishes the connection
+$conn = mysqli_init();
+mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306);
+if (mysqli_connect_errno($conn)) {
+die('Failed to connect to MySQL: '.mysqli_connect_error());
+}
+   
+session_start();
+   
+   if($_SERVER["REQUEST_METHOD"] == "POST") {
+      // username and password sent from form 
+      
+      $doctorname = mysqli_real_escape_string($conn,$_POST['DocTorName']);
+      
+      $sql = "DELETE FROM `Doctor`
+              WHERE Doctor.FullNameDoctor = '$doctorname';";
+
+      $result = mysqli_query($conn,$sql);
+
+      
+      header("location: test.php");
+      }else {
+         $error = "Your Login Name or Password is invalid";
+      }
+   
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -228,6 +264,25 @@ mysqli_close($conn);
   <!-- End Contact section -->
 
 
+<!-- start special quote -->
+  <section id="specialQuote">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 wow bounceInLeft">
+          <p>Delete Doctor</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End special quote -->
+
+ <form class="submitphoto_form" action="" method="post">
+                    
+                    <input type="text" name="DocTorName" class="form-control wpcf7-email" placeholder="Doctor name to delete">          
+                    <input type="submit" value="Delete" class="wpcf7-submit photo-submit">  
+
+             
+</form>
 
 
 
