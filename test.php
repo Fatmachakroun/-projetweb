@@ -71,6 +71,61 @@ session_start();
 ?>
 
 
+<?php
+   
+
+$host = 'projetwebsrv.mysql.database.azure.com';
+$username = 'mysqluser@projetwebsrv';
+$password = 'Fatma123';
+$db_name = 'document';
+//Establishes the connection
+$conn = mysqli_init();
+mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306);
+if (mysqli_connect_errno($conn)) {
+die('Failed to connect to MySQL: '.mysqli_connect_error());
+}
+
+   session_start();
+   
+   if($_SERVER["REQUEST_METHOD"] == "POST") {
+      // username and password sent from form 
+      
+      $docnameupdate2 = mysqli_real_escape_string($conn,$_POST['DocTorNameUpdateAdress']);
+      $docnameupdateregion = mysqli_real_escape_string($conn,$_POST['NewRegionUpdate']); 
+      $docnameupdateadress = mysqli_real_escape_string($conn,$_POST['NewAdressUpdate']);
+
+
+      
+      
+      $sql1 = "UPDATE Doctor
+              
+              SET Region = '$docnameupdateregion'
+                 
+              WHERE Doctor.FullNameDoctor = '$docnameupdate2' ;";
+      $result = mysqli_query($conn,$sql1);
+
+
+      $sql2 = "UPDATE Doctor
+              
+              SET Address = '$docnameupdateadress'
+                 
+              WHERE Doctor.FullNameDoctor = 'docnameupdate2' ;";
+      $result = mysqli_query($conn,$sql2);
+
+
+
+
+      header("location: test.php");
+     
+      
+      
+      }else {
+         $error = "Your Login Name or Password is invalid";
+      }
+   
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -290,6 +345,95 @@ mysqli_close($conn);
   <!-- End special quote -->
 
             
+
+
+
+
+  <!-- start Contact section -->
+  <section id="contact">
+    <div class="row">
+      <div class="col-lg-12 col-md-12">
+        <div class="contact_map">
+          <!-- Start Google map -->
+          
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+         <div class="contact_area">
+           <div class="client_title">
+              <hr>
+              <h2>Update Doctor's <span>Phone</span></h2>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="contact_left wow fadeInLeft">
+
+
+
+                  <form class="submitphoto_form"  method="post" target="hidden-form">
+
+                    <input type="mail" name="Email" class="form-control wpcf7-email" placeholder="Your Email address">    
+                    <input type="text" name="FullNameDoctor" class="form-control wpcf7-text" placeholder="Doctor's name">
+                    <input type="Phone" name="NumDoc" class="form-control wpcf7-text" placeholder="Doctor's phone number">
+                    <input type="text" name="Specialty" class="form-control wpcf7-text" placeholder="Doctor's speciality">
+                    <input type="text" name="Region" class="form-control wpcf7-text" placeholder="Doctor's region">
+                    <input type="text" name="Address" class="form-control wpcf7-text" placeholder="Doctor's address">
+                    <input type="text" name="FeedBack" class="form-control wpcf7-text" placeholder="Doctor's feedback">
+                          
+                    
+                    <input type="submit" name="submit" value="Add doctor" class="wpcf7-submit photo-submit">    
+
+         
+                  </form>
+                </div>                  
+              </div>
+
+
+
+                  </address>
+                </div>
+              </div>
+            </div>              
+         </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Contact section -->
+
+
+
+
+
+
+<!-- start special quote -->
+  <section id="specialQuote">
+    <div class="container">
+      <div class="row">
+          <div class="col-lg-12 col-md-12 wow bounceInLeft">
+          <p>Update Doctor's Region and Adress</p>
+          </div>
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="contact_left wow fadeInLeft">
+                  <form class="submitphoto_form"  method="post" target="hidden-form">
+                    <input type="text" name="DocTorNameUpdateAdress" class="form-control wpcf7-email" placeholder="Doctor name to update">  
+                    <input type="text" name="NewRegionUpdate" class="form-control wpcf7-email" placeholder="Doctor's new region">
+                    <input type="text" name="NewAdressUpdate" class="form-control wpcf7-email" placeholder="Doctor's new adress">            
+                    <input type="submit" value="Update Region & Adress" class="wpcf7-submit photo-submit">  
+
+                  </form>
+
+                </div>
+              </div>
+            </div>
+      </div>
+    </div>
+  </section>
+  <!-- End special quote -->
 
 
 
