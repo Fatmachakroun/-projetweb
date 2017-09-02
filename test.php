@@ -57,7 +57,7 @@ session_start();
       
       $doctorname = mysqli_real_escape_string($conn,$_POST['DocTorName']);
       
-      $sql = "DELETE FROM `Doctor`
+      $sql = "DELETE FROM Doctor
               WHERE Doctor.FullNameDoctor = '$doctorname';";
 
       $result = mysqli_query($conn,$sql);
