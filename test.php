@@ -24,7 +24,7 @@ die('Failed to connect to MySQL: '.mysqli_connect_error());
        $feedback=$_POST["FeedBack"];
 
 
-      $sql="INSERT INTO Doctor  VALUES ( 0, '$useremail', '$fullnamedoctor', '$numdoc', '$specialty', '$region', '$address', '$feedback');";
+      $sql="INSERT INTO Doctor (  UserEmail, FullNameDoctor, NumDoc, Specialty, Region, Address, FeedBack) VALUES ('$useremail', '$fullnamedoctor', '$numdoc', '$specialty', '$region', '$address', '$feedback');";
       $result = mysqli_query($conn,$sql);
       header("location: test.php");
       
@@ -58,7 +58,7 @@ session_start();
       $doctorname = mysqli_real_escape_string($conn,$_POST['DocTorName']);
       
       $sql = "DELETE FROM `Doctor`
-              WHERE (Doctor.FullNameDoctor = '$doctorname' & Doctor.ID = 0 );";
+              WHERE (Doctor.FullNameDoctor = '$doctorname' & Doctor.ID=0 );";
 
       $result = mysqli_query($conn,$sql);
 
