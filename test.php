@@ -99,21 +99,10 @@ die('Failed to connect to MySQL: '.mysqli_connect_error());
       
       $sql1 = "UPDATE Doctor
               
-              SET Region = '$docnameupdateregion'
+              SET (Region = '$docnameupdateregion' & Address = '$docnameupdateadress')
                  
               WHERE Doctor.FullNameDoctor = '$docnameupdate2' ;";
       $result1 = mysqli_query($conn,$sql1);
-
-
-      $sql2 = "UPDATE Doctor
-              
-              SET Address = '$docnameupdateadress'
-                 
-              WHERE Doctor.FullNameDoctor = 'docnameupdate2' ;";
-      $result2 = mysqli_query($conn,$sql2);
-
-
-
 
       header("location: test.php");
      
