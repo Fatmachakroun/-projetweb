@@ -220,22 +220,13 @@ die('Failed to connect to MySQL: '.mysqli_connect_error());
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">SBF <span>PROJECT</span></a>
+        <a class="navbar-brand" href="index.php">SBF <span>PROJECT</span></a>
         <!-- <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"></a> -->
       </div>
       <div id="navbar" class="navbar-collapse collapse navbar_area">          
         <ul class="nav navbar-nav navbar-right custom_nav">
           <li><a href="index.php">Home</a></li>
-          <li><a href="doctors.html">Our Doctors</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="download.html">Download MedBox</a></li>              
-            </ul>
-          </li>             
-          <li><a href="insc.html"><B><FONT color="red">Inscription</FONT></B></a></li>
-          <li><a href="login.html"><B><FONT color="red">Login</FONT></B></a></li>                    
+          <li><a href="doctors.html">Our Doctors</a></li>                  
         </ul>
       </div><!--/.nav-collapse -->
     </div>
