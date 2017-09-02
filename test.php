@@ -226,7 +226,8 @@ die('Failed to connect to MySQL: '.mysqli_connect_error());
       <div id="navbar" class="navbar-collapse collapse navbar_area">          
         <ul class="nav navbar-nav navbar-right custom_nav">
           <li><a href="index.php">Home</a></li>
-          <li><a href="doctors.html">Our Doctors</a></li>                  
+          <li><a href="test.php"><B><FONT color="red">Our Doctors</FONT></B></a></li>
+                          
         </ul>
       </div><!--/.nav-collapse -->
     </div>
