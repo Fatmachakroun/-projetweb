@@ -90,7 +90,7 @@
 
 $host = 'projetwebsrv.mysql.database.azure.com';
 $username = 'mysqluser@projetwebsrv';
-$password = 'Fatma123';
+$password = 'Siwar123';
 $db_name = 'document';
 
 //Establishes the connection
