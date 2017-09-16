@@ -78,7 +78,7 @@
       <div class="row">
         <div class="col-lg-12 col-md-12 wow bounceInLeft">
           <p>Here, you can</p>
-          <p>Here, you can add doctors.</p>
+          <p>Here, you can add doctors and give your opinion about them.</p>
         </div>
       </div>
     </div>
